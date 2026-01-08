@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+/* Custom scrollbar styles */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #4b5563;
+  border-radius: 4px;
+}
+.custom-scrollbar {
+  scrollbar-gutter: stable;
+}
+
+/* PRINT-ONLY MODAL CSS */
+@media print {
+  /* Hide everything by default */
+  body * {
+    visibility: hidden !important;
+  }
+
+  /* Show only the modal print area */
+  .print-modal-content, .print-modal-content * {
+    visibility: visible !important;
+  }
+
+  /* Make printed modal fill the page */
+  .print-modal-content {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: white !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    z-index: 99999 !important;
+  }
+
+  /* Hide sidebar, bg image, and everything except modal */
+  .sidebar, aside, .main-bg-image, .bg-cover, .print-root {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* But show modal if it's inside .print-root (safety) */
+  .print-modal-content {
+    display: block !important;
+  }
+
+  @page {
+    margin: 0;
+  }
+}
