@@ -20,7 +20,7 @@ const Login = () => {
     setError("");
 
     // Short-circuit: accept a local test admin credential without calling the API
-    if (email === "abdullah.nasir@nestosh.com" && password === "1234678") {
+    if (email === "abdullah.nasir@gmail.com" && password === "1234678") {
       const token = "local-admin-token";
       localStorage.setItem("token", token);
       toast.success("Login successful!");
